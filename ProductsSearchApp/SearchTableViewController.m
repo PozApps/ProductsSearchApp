@@ -11,35 +11,32 @@
 #import "ProductTableViewCell.h"
 #import "ServerManager.h"
 
-@interface SearchTableViewController () <UITableViewDataSource , UITableViewDelegate>
+@interface SearchTableViewController () <UITableViewDataSource , UITableViewDelegate, UISearchBarDelegate>
+
+@property (nonatomic) UISearchBar *searchBar;
 
 @end
+
+NSString * const kDefaultSearch = @"apple";
 
 @implementation SearchTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    ServerManager *serverManager = [ServerManager sharedInstance];
     
     self.productsArray = [[NSArray alloc] init];
+    [self searchProducts:kDefaultSearch];
     
-    [serverManager getProducts:@"apple" withCompletionBlock:^(NSArray *products) {
-        
-        self.productsArray = products;
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [[self tableView] reloadData];
-        });
-    }];
+    self.searchBar = [[UISearchBar alloc] init];
+    self.searchBar.delegate = self;
+    self.searchBar.text = kDefaultSearch;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -64,5 +61,31 @@
  
      return cell;
  }
+
+#pragma mark - Table view delegate
+// I added the search bar programmatically in order to attach it to the tableview header to make it stick to the top.
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.searchBar;
+}
+
+#pragma mark - Search bar delegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self searchProducts:searchBar.text];
+}
+
+#pragma mark - Other methods
+- (void)searchProducts:(NSString *)queryStr {
+    ServerManager *serverManager = [ServerManager sharedInstance];
+
+    [serverManager getProducts:queryStr withCompletionBlock:^(NSArray *products) {
+        
+        self.productsArray = products;
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [[self tableView] reloadData];
+        });
+    }];
+}
 
 @end
