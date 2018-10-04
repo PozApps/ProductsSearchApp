@@ -16,6 +16,7 @@
         _desc = [dict objectForKey:@"description"];
         _imageUrl = [dict objectForKey:@"imageUrl"];
         _regularPrice = [dict objectForKey:@"regularPrice"];
+        _price = [dict objectForKey:@"price"];
         _rating = [dict objectForKey:@"rating"];
     }
     

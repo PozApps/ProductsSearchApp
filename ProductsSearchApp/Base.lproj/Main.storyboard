@@ -6,6 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,38 +28,58 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mOX-ac-HRZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOX-ac-HRZ">
+                                            <rect key="frame" x="5" y="5" width="89.5" height="89.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="mOX-ac-HRZ" secondAttribute="height" multiplier="1:1" id="M0n-VN-GJd"/>
+                                            </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Product Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nlC-gA-aKU">
-                                            <rect key="frame" x="100" y="0.0" width="250" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyM-Wz-ZeD">
-                                            <rect key="frame" x="108" y="39" width="25" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyM-Wz-ZeD">
+                                            <rect key="frame" x="99.5" y="46" width="31" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$355.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-o5-hUG">
-                                            <rect key="frame" x="108" y="68" width="66" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$355.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-o5-hUG">
+                                            <rect key="frame" x="99" y="75" width="48" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gucci women's shoes &quot;RUBBER RAINBOOT&quot; Fall/Winter 2011/2012" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uia-mu-CcU">
+                                            <rect key="frame" x="99.5" y="10" width="245.5" height="31.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$355.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WZ-tY-Dax" userLabel="Regular Price Label">
+                                            <rect key="frame" x="99" y="61" width="41" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mOX-ac-HRZ" firstAttribute="top" secondItem="cIc-wQ-6Io" secondAttribute="top" constant="5" id="44g-fw-iXE"/>
+                                        <constraint firstItem="EyM-Wz-ZeD" firstAttribute="leading" secondItem="Uia-mu-CcU" secondAttribute="leading" id="4mm-2x-615"/>
+                                        <constraint firstItem="FKI-o5-hUG" firstAttribute="firstBaseline" secondItem="4WZ-tY-Dax" secondAttribute="baseline" constant="12" symbolType="layoutAnchor" id="CaJ-iS-f2r"/>
+                                        <constraint firstItem="FKI-o5-hUG" firstAttribute="bottom" secondItem="mOX-ac-HRZ" secondAttribute="bottom" constant="-5" id="Di7-sc-acc"/>
+                                        <constraint firstItem="Uia-mu-CcU" firstAttribute="top" secondItem="mOX-ac-HRZ" secondAttribute="top" constant="5" id="E8L-WF-hqs"/>
+                                        <constraint firstItem="mOX-ac-HRZ" firstAttribute="leading" secondItem="cIc-wQ-6Io" secondAttribute="leading" constant="5" id="Erb-Q3-WTr"/>
+                                        <constraint firstItem="4WZ-tY-Dax" firstAttribute="leading" secondItem="Uia-mu-CcU" secondAttribute="leading" id="I5V-Gi-FG1"/>
+                                        <constraint firstItem="Uia-mu-CcU" firstAttribute="leading" secondItem="mOX-ac-HRZ" secondAttribute="trailing" constant="5" id="Rtc-Ob-InV"/>
+                                        <constraint firstItem="EyM-Wz-ZeD" firstAttribute="top" secondItem="Uia-mu-CcU" secondAttribute="bottom" constant="4.5" id="Xpl-Ki-0g0"/>
+                                        <constraint firstItem="mOX-ac-HRZ" firstAttribute="centerY" secondItem="cIc-wQ-6Io" secondAttribute="centerY" id="c1s-7a-Etb"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uia-mu-CcU" secondAttribute="trailing" constant="30" id="elz-cO-J57"/>
+                                        <constraint firstItem="FKI-o5-hUG" firstAttribute="leading" secondItem="Uia-mu-CcU" secondAttribute="leading" id="nPy-dR-MDv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descTextView" destination="nlC-gA-aKU" id="Bea-NZ-1SR"/>
+                                    <outlet property="descLabel" destination="Uia-mu-CcU" id="4jR-H3-kjU"/>
                                     <outlet property="priceLabel" destination="FKI-o5-hUG" id="Jgz-zE-gWI"/>
                                     <outlet property="productImageView" destination="mOX-ac-HRZ" id="Weo-VI-GHx"/>
                                     <outlet property="ratingLabel" destination="EyM-Wz-ZeD" id="Sld-Qh-DLw"/>
+                                    <outlet property="regularPriceLabel" destination="4WZ-tY-Dax" id="PXA-mZ-mfP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJD-oi-JhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-211" y="-31"/>
+            <point key="canvasLocation" x="-212" y="-31.03448275862069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="umz-0u-2PY">

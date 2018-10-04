@@ -14,7 +14,7 @@
 @interface SearchTableViewController () <UITableViewDataSource , UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic) UISearchBar *searchBar;
-
+@property (nonatomic) NSNumberFormatter *priceNumberFormatter;
 @end
 
 NSString * const kDefaultSearch = @"apple";
@@ -31,6 +31,9 @@ NSString * const kDefaultSearch = @"apple";
     self.searchBar.delegate = self;
     self.searchBar.text = kDefaultSearch;
     
+    self.priceNumberFormatter = [[NSNumberFormatter alloc] init];
+    [self.priceNumberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [self.priceNumberFormatter setMaximumFractionDigits:2];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,11 +57,33 @@ NSString * const kDefaultSearch = @"apple";
  
      Product *product = [self.productsArray objectAtIndex:indexPath.row];
      [[cell productImageView] setImage:[UIImage imageNamed:@"product"]];
-     [[cell descTextView] setText:[product desc]];
-     [[cell priceLabel] setText:[NSString stringWithFormat:@"%f",[[product regularPrice] doubleValue]]];
-     [[cell ratingLabel] setText:[NSString stringWithFormat:@"%f",[[product rating] doubleValue]]];
      
- 
+     NSString *origDesc = [product desc];
+     [[cell descLabel] setText:[origDesc stringByReplacingOccurrencesOfString: @"<br/>" withString: @"\n"]];
+     
+     if ([product rating]) {
+         [[cell ratingLabel] setText:[NSString stringWithFormat:@"%.1f",[[product rating] doubleValue]]];
+         [[cell ratingLabel] setHidden:NO];
+     } else {
+         [[cell ratingLabel] setText:@""];
+         [[cell ratingLabel] setHidden:YES];
+    }
+     
+     if ([[product regularPrice] isEqualToNumber:[product price]]) {
+         [[cell regularPriceLabel] setText:@""];
+         [[cell regularPriceLabel] setHidden:YES];
+     } else {
+         NSString *regularPrice = [self.priceNumberFormatter stringFromNumber:[product regularPrice]];
+         NSMutableAttributedString *regularPriceStrikeThrough = [[NSMutableAttributedString alloc] initWithString:regularPrice];
+         [regularPriceStrikeThrough addAttribute:NSStrikethroughStyleAttributeName
+                                 value:@1
+                                 range:NSMakeRange(0, [regularPriceStrikeThrough length])];
+         [[cell regularPriceLabel] setAttributedText:regularPriceStrikeThrough];
+         [[cell regularPriceLabel] setHidden:NO];
+     }
+          
+     [[cell priceLabel] setText:[self.priceNumberFormatter stringFromNumber:[product price]]];
+     
      return cell;
  }
 
