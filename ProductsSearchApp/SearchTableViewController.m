@@ -19,18 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 
     ServerManager *serverManager = [ServerManager sharedInstance];
-    self.productsArray = [serverManager getProducts:@"apple"];
+    
+    self.productsArray = [[NSArray alloc] init];
+    
+    [serverManager getProducts:@"apple" withCompletionBlock:^(NSArray *products) {
+        
+        self.productsArray = products;
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [[self tableView] reloadData];
+        });
+    }];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - Table view data source
@@ -50,56 +58,11 @@
      Product *product = [self.productsArray objectAtIndex:indexPath.row];
      [[cell productImageView] setImage:[UIImage imageNamed:@"product"]];
      [[cell descTextView] setText:[product desc]];
-     [[cell priceLabel] setText:[NSString stringWithFormat:@"%f",[[product price] doubleValue]]];
+     [[cell priceLabel] setText:[NSString stringWithFormat:@"%f",[[product regularPrice] doubleValue]]];
      [[cell ratingLabel] setText:[NSString stringWithFormat:@"%f",[[product rating] doubleValue]]];
      
  
- return cell;
+     return cell;
  }
-
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

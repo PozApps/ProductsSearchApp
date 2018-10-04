@@ -10,6 +10,19 @@
 
 @implementation Product
 
+- (instancetype)initWithJSONDict:(NSDictionary *)dict {
+    if (self = [super init]) {
+        _productId = [dict objectForKey:@"id"];
+        _desc = [dict objectForKey:@"description"];
+        _imageUrl = [dict objectForKey:@"imageUrl"];
+        _regularPrice = [dict objectForKey:@"regularPrice"];
+        _rating = [dict objectForKey:@"rating"];
+    }
+    
+    return self;
+}
+
+/* No need in this method if the only way to init products is from the json
 - (instancetype)initWithId:(NSInteger )productId description:(NSString *)desc imageUrl:(NSString *)imageUrl price:(NSNumber *)price {
     if (self = [super init]) {
         _productId = productId;
@@ -19,5 +32,6 @@
     }
     return self;
 }
+*/
 
 @end

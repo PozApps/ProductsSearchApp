@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50F1876B21660D3900E5C5DC /* ProductsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1876A21660D3900E5C5DC /* ProductsRequest.m */; };
 		50F420F22164AC1800F279BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F420F12164AC1800F279BC /* AppDelegate.m */; };
 		50F420F52164AC1800F279BC /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F420F42164AC1800F279BC /* SearchTableViewController.m */; };
 		50F420F82164AC1800F279BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F420F62164AC1800F279BC /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50F1876921660D3900E5C5DC /* ProductsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsRequest.h; sourceTree = "<group>"; };
+		50F1876A21660D3900E5C5DC /* ProductsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsRequest.m; sourceTree = "<group>"; };
 		50F420ED2164AC1800F279BC /* ProductsSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductsSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F420F02164AC1800F279BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50F420F12164AC1800F279BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				50F4212C2164B49700F279BC /* ServerManager.m */,
 				50F4212E2164B65400F279BC /* NetworkManager.h */,
 				50F4212F2164B65400F279BC /* NetworkManager.m */,
+				50F1876921660D3900E5C5DC /* ProductsRequest.h */,
+				50F1876A21660D3900E5C5DC /* ProductsRequest.m */,
 			);
 			path = ProductsSearchApp;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F4212D2164B49700F279BC /* ServerManager.m in Sources */,
+				50F1876B21660D3900E5C5DC /* ProductsRequest.m in Sources */,
 				50F421302164B65400F279BC /* NetworkManager.m in Sources */,
 				50F420F52164AC1800F279BC /* SearchTableViewController.m in Sources */,
 				50F421242164AD2300F279BC /* Product.m in Sources */,

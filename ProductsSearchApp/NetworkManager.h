@@ -12,7 +12,6 @@
 
 + (instancetype)sharedInstance;
 
-- (NSString *) getDataFrom:(NSString *)url;
-
+- (void) getDataFromRequest:(NSMutableURLRequest *)request withCompletionBlock:(void (^)(NSData *data, NSError *error))completionBlock;
 
 @end

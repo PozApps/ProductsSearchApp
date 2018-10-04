@@ -10,13 +10,13 @@
 
 @interface Product : NSObject
 
-@property (nonatomic) NSInteger productId;
+@property (nonatomic) NSNumber *productId;
 @property (nonatomic) NSString *imageUrl;
 @property (nonatomic) NSString *desc;
 @property (nonatomic) NSNumber *rating;
+@property (nonatomic) NSNumber *regularPrice;
 @property (nonatomic) NSNumber *price;
-@property (nonatomic) NSNumber *priceDiscount;
 
-- (instancetype)initWithId:(NSInteger )productId description:(NSString *)desc imageUrl:(NSString *)imageUrl price:(NSNumber *)price;
+- (instancetype)initWithJSONDict:(NSDictionary *)dict;
 
 @end

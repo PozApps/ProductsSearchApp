@@ -12,6 +12,6 @@
 
 + (instancetype)sharedInstance;
 
-- (NSArray *)getProducts:(NSString *)queryStr;
+- (void)getProducts:(NSString *)queryStr withCompletionBlock:(void (^)(NSArray *products))completionBlock;
 
 @end

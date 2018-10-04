@@ -19,20 +19,13 @@
     return instance;
 }
 
-- (NSString *) getDataFrom:(NSString *)url {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setHTTPMethod:@"GET"];
-    [request setURL:[NSURL URLWithString:url]];
-    
+- (void)getDataFromRequest:(NSMutableURLRequest *)request withCompletionBlock:(void (^)(NSData *data, NSError *error))completionBlock {
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
       ^(NSData * _Nullable data,
         NSURLResponse * _Nullable response,
         NSError * _Nullable error) {
-          NSString *myStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+          completionBlock(data, error);
       }] resume];
-    
-    return @"";
 }
-
 
 @end
