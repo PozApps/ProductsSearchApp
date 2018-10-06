@@ -10,6 +10,7 @@
 #import "Product.h"
 #import "ProductTableViewCell.h"
 #import "ProductsModel.h"
+#import "MBProgressHUD.h"
 
 @interface SearchTableViewController () <UITableViewDataSource , UITableViewDelegate, UISearchBarDelegate>
 
@@ -120,12 +121,15 @@ NSString * const kDefaultImageName = @"product";
 
 #pragma mark - Other methods
 - (void)searchProducts:(NSString *)queryStr {
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     ProductsModel *serverManager = [ProductsModel sharedInstance];
 
     [serverManager getProducts:queryStr withCompletionBlock:^(NSArray *products) {
         // I keep the array from the products model, but if it wasn't a singleton I should have not keep a strong reference to it.
         self.productsArray = products;
         dispatch_sync(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.tableView reloadData];
             if ([self.productsArray count] > 0) {
                 [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
