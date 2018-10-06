@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		50F1876B21660D3900E5C5DC /* ProductsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1876A21660D3900E5C5DC /* ProductsRequest.m */; };
+		50F1876E2166AE9D00E5C5DC /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1876D2166AE9D00E5C5DC /* CacheManager.m */; };
+		50F187712167F33E00E5C5DC /* DownloadImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F187702167F33E00E5C5DC /* DownloadImageRequest.m */; };
 		50F420F22164AC1800F279BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F420F12164AC1800F279BC /* AppDelegate.m */; };
 		50F420F52164AC1800F279BC /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F420F42164AC1800F279BC /* SearchTableViewController.m */; };
 		50F420F82164AC1800F279BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F420F62164AC1800F279BC /* Main.storyboard */; };
@@ -18,7 +20,7 @@
 		50F421152164AC1A00F279BC /* ProductsSearchAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F421142164AC1A00F279BC /* ProductsSearchAppUITests.m */; };
 		50F421242164AD2300F279BC /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F421232164AD2300F279BC /* Product.m */; };
 		50F4212A2164B24300F279BC /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F421292164B24300F279BC /* ProductTableViewCell.m */; };
-		50F4212D2164B49700F279BC /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4212C2164B49700F279BC /* ServerManager.m */; };
+		50F4212D2164B49700F279BC /* ProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4212C2164B49700F279BC /* ProductsModel.m */; };
 		50F421302164B65400F279BC /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4212F2164B65400F279BC /* NetworkManager.m */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,10 @@
 /* Begin PBXFileReference section */
 		50F1876921660D3900E5C5DC /* ProductsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsRequest.h; sourceTree = "<group>"; };
 		50F1876A21660D3900E5C5DC /* ProductsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsRequest.m; sourceTree = "<group>"; };
+		50F1876C2166AE9D00E5C5DC /* CacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
+		50F1876D2166AE9D00E5C5DC /* CacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
+		50F1876F2167F33E00E5C5DC /* DownloadImageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadImageRequest.h; sourceTree = "<group>"; };
+		50F187702167F33E00E5C5DC /* DownloadImageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadImageRequest.m; sourceTree = "<group>"; };
 		50F420ED2164AC1800F279BC /* ProductsSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductsSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F420F02164AC1800F279BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50F420F12164AC1800F279BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,8 +68,8 @@
 		50F421232164AD2300F279BC /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		50F421282164B24300F279BC /* ProductTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		50F421292164B24300F279BC /* ProductTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
-		50F4212B2164B49700F279BC /* ServerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
-		50F4212C2164B49700F279BC /* ServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
+		50F4212B2164B49700F279BC /* ProductsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsModel.h; sourceTree = "<group>"; };
+		50F4212C2164B49700F279BC /* ProductsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsModel.m; sourceTree = "<group>"; };
 		50F4212E2164B65400F279BC /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		50F4212F2164B65400F279BC /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +99,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50F187722168EB9D00E5C5DC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50F420F32164AC1800F279BC /* SearchTableViewController.h */,
+				50F420F42164AC1800F279BC /* SearchTableViewController.m */,
+				50F421282164B24300F279BC /* ProductTableViewCell.h */,
+				50F421292164B24300F279BC /* ProductTableViewCell.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		50F187732168EBAE00E5C5DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50F421222164AD2300F279BC /* Product.h */,
+				50F421232164AD2300F279BC /* Product.m */,
+				50F4212B2164B49700F279BC /* ProductsModel.h */,
+				50F4212C2164B49700F279BC /* ProductsModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50F187742168EBC100E5C5DC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				50F4212E2164B65400F279BC /* NetworkManager.h */,
+				50F4212F2164B65400F279BC /* NetworkManager.m */,
+				50F1876C2166AE9D00E5C5DC /* CacheManager.h */,
+				50F1876D2166AE9D00E5C5DC /* CacheManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		50F187752168EBE800E5C5DC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				50F1876921660D3900E5C5DC /* ProductsRequest.h */,
+				50F1876A21660D3900E5C5DC /* ProductsRequest.m */,
+				50F1876F2167F33E00E5C5DC /* DownloadImageRequest.h */,
+				50F187702167F33E00E5C5DC /* DownloadImageRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		50F420E42164AC1800F279BC = {
 			isa = PBXGroup;
 			children = (
@@ -116,25 +166,17 @@
 		50F420EF2164AC1800F279BC /* ProductsSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				50F187742168EBC100E5C5DC /* Managers */,
+				50F187732168EBAE00E5C5DC /* Models */,
+				50F187722168EB9D00E5C5DC /* ViewControllers */,
+				50F187752168EBE800E5C5DC /* Requests */,
 				50F420F02164AC1800F279BC /* AppDelegate.h */,
 				50F420F12164AC1800F279BC /* AppDelegate.m */,
-				50F420F32164AC1800F279BC /* SearchTableViewController.h */,
-				50F420F42164AC1800F279BC /* SearchTableViewController.m */,
 				50F420F62164AC1800F279BC /* Main.storyboard */,
 				50F420F92164AC1A00F279BC /* Assets.xcassets */,
 				50F420FB2164AC1A00F279BC /* LaunchScreen.storyboard */,
 				50F420FE2164AC1A00F279BC /* Info.plist */,
 				50F420FF2164AC1A00F279BC /* main.m */,
-				50F421222164AD2300F279BC /* Product.h */,
-				50F421232164AD2300F279BC /* Product.m */,
-				50F421282164B24300F279BC /* ProductTableViewCell.h */,
-				50F421292164B24300F279BC /* ProductTableViewCell.m */,
-				50F4212B2164B49700F279BC /* ServerManager.h */,
-				50F4212C2164B49700F279BC /* ServerManager.m */,
-				50F4212E2164B65400F279BC /* NetworkManager.h */,
-				50F4212F2164B65400F279BC /* NetworkManager.m */,
-				50F1876921660D3900E5C5DC /* ProductsRequest.h */,
-				50F1876A21660D3900E5C5DC /* ProductsRequest.m */,
 			);
 			path = ProductsSearchApp;
 			sourceTree = "<group>";
@@ -287,10 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F4212D2164B49700F279BC /* ServerManager.m in Sources */,
+				50F4212D2164B49700F279BC /* ProductsModel.m in Sources */,
 				50F1876B21660D3900E5C5DC /* ProductsRequest.m in Sources */,
 				50F421302164B65400F279BC /* NetworkManager.m in Sources */,
+				50F187712167F33E00E5C5DC /* DownloadImageRequest.m in Sources */,
 				50F420F52164AC1800F279BC /* SearchTableViewController.m in Sources */,
+				50F1876E2166AE9D00E5C5DC /* CacheManager.m in Sources */,
 				50F421242164AD2300F279BC /* Product.m in Sources */,
 				50F421002164AC1A00F279BC /* main.m in Sources */,
 				50F420F22164AC1800F279BC /* AppDelegate.m in Sources */,

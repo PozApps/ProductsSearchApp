@@ -88,7 +88,7 @@
                             <outlet property="delegate" destination="Ls5-eb-LfZ" id="7v3-ao-zPM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Eiy-zD-fOy"/>
+                    <navigationItem key="navigationItem" title="Products Search" id="Eiy-zD-fOy"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJD-oi-JhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

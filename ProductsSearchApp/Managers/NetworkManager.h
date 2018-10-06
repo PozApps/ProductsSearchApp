@@ -1,5 +1,5 @@
 //
-//  ServerManager.h
+//  NetworkManager.h
 //  ProductsSearchApp
 //
 //  Created by Nadav Pozmantir on 03/10/2018.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ServerManager : NSObject
+@interface NetworkManager : NSObject
 
 + (instancetype)sharedInstance;
 
-- (void)getProducts:(NSString *)queryStr withCompletionBlock:(void (^)(NSArray *products))completionBlock;
+- (void)getDataFromRequest:(NSMutableURLRequest *)request withCompletionBlock:(void (^)(NSData *data, NSError *error))completionBlock;
 
 @end
